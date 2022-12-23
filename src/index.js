@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import path from 'path';
 import _ from 'lodash';
 
-const getPath = (filePath) => path.resolve(process.cwd(), filePath);
+const getPath = (file) => path.resolve(process.cwd(), file);
 
 const readFile = (filePath) => readFileSync(getPath(filePath), 'utf-8');
 
