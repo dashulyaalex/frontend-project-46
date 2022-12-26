@@ -17,7 +17,7 @@ const getDifference = (obj1, obj2) => {
     return { kind: 'unchanged', key, value: obj1[key] };
   });
   const result = difference.map((item) => {
-    const kind = item.kind;
+    const { kind } = item;
     switch (kind) {
       case 'added':
         return `  + ${item.key}: ${item.value}`;
