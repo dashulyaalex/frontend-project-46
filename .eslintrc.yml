@@ -1,7 +1,12 @@
+plugins: 
+  - jest
 env:
   node: true
   es2021: true
-extends: airbnb-base
+  jest: true
+extends: 
+  - 'airbnb-base'
+  - 'plugin:jest/recommended'
 overrides: []
 parserOptions:
   ecmaVersion: 2020
