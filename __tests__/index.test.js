@@ -16,9 +16,14 @@ const expected = `{
   + verbose: true
 }`;
 
-const file1 = getFixturePath('file1.json');
-const file2 = getFixturePath('file2.json');
+test('genDiff json', () => {
+  const file1 = getFixturePath('file1.json');
+  const file2 = getFixturePath('file2.json');
+  expect(genDiff(file1, file2)).toEqual(expected);
+});
 
-test('genDiff', () => {
+test('genDiff yaml', () => {
+  const file1 = getFixturePath('file1.yml');
+  const file2 = getFixturePath('file2.yml');
   expect(genDiff(file1, file2)).toEqual(expected);
 });
