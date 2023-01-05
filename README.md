@@ -29,5 +29,8 @@ npm link
 Help:
 [![asciicast](https://asciinema.org/a/iEfG7Ej5Z7YHliM6voKg1dumG.svg)](https://asciinema.org/a/iEfG7Ej5Z7YHliM6voKg1dumG)
 
-YML & JSON:
+YML & JSON plain files:
 [![asciicast](https://asciinema.org/a/597TCksRzcvrZtojCXTDnEfh4.svg)](https://asciinema.org/a/597TCksRzcvrZtojCXTDnEfh4)
+
+YML & JSON nested:
+[![asciicast](https://asciinema.org/a/UXqC7bLpyYrCbvpY96GWmoSsc.svg)](https://asciinema.org/a/UXqC7bLpyYrCbvpY96GWmoSsc)
