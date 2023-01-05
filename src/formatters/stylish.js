@@ -9,7 +9,7 @@ const stringify = (data, depth = 1) => {
   const lines = Object
     .entries(data)
     .map(([key, value]) => `${ident(depth + 1)}  ${key}: ${stringify(value, depth + 1)}`);
-    return `{\n${lines.join('\n')}\n${ident(depth)}  }`;
+  return `{\n${lines.join('\n')}\n${ident(depth)}  }`;
 };
 
 const stylish = (data, depth = 1) => {
@@ -22,7 +22,7 @@ const stylish = (data, depth = 1) => {
       case 'changed':
         return [
           `${ident(depth)}- ${currentLine.key}: ${stringify(currentLine.value1, depth)}`,
-          `${ident(depth)}+ ${currentLine.key}: ${stringify(currentLine.value2, depth)}`
+          `${ident(depth)}+ ${currentLine.key}: ${stringify(currentLine.value2, depth)}`,
         ];
       case 'unchanged':
         return `${ident(depth)}  ${currentLine.key}: ${stringify(currentLine.value, depth)}`;
