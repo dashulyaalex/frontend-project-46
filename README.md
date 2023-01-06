@@ -32,5 +32,9 @@ Help:
 YML & JSON plain files:
 [![asciicast](https://asciinema.org/a/597TCksRzcvrZtojCXTDnEfh4.svg)](https://asciinema.org/a/597TCksRzcvrZtojCXTDnEfh4)
 
-YML & JSON nested:
-[![asciicast](https://asciinema.org/a/UXqC7bLpyYrCbvpY96GWmoSsc.svg)](https://asciinema.org/a/UXqC7bLpyYrCbvpY96GWmoSsc)
+YML & JSON nested stylish format:
+[![asciicast](https://asciinema.org/a/jASEjjCnM1VzK1CehQIxkOY9X.svg)](https://asciinema.org/a/jASEjjCnM1VzK1CehQIxkOY9X)
+
+YML & JSON nested plain format:
+[![asciicast](https://asciinema.org/a/1XcRRzyji24Ot05BciFk9lIEs.svg)](https://asciinema.org/a/1XcRRzyji24Ot05BciFk9lIEs)
+

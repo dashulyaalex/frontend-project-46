@@ -1,11 +1,15 @@
 import stylish from './stylish.js';
+import plain from './plain.js';
 
-const formatter = (data, format = 'stylish') => {
-  let result;
-  if (format === 'stylish') {
-    result = stylish(data);
+const formatter = (data, formatName = 'stylish') => {
+  switch (formatName) {
+    case 'stylish':
+      return stylish(data);
+    case 'plain':
+      return plain(data);
+    default:
+      return 'Unknown format';
   }
-  return result;
 };
 
 export default formatter;

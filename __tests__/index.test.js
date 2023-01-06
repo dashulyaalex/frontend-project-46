@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
 import genDiff from '../src/index.js';
@@ -7,59 +8,27 @@ const __dirname = dirname(__filename);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-const expected = `{
-    common: {
-      + follow: false
-        setting1: Value 1
-      - setting2: 200
-      - setting3: true
-      + setting3: null
-      + setting4: blah blah
-      + setting5: {
-            key5: value5
-        }
-        setting6: {
-            doge: {
-              - wow: 
-              + wow: so much
-            }
-            key: value
-          + ops: vops
-        }
-    }
-    group1: {
-      - baz: bas
-      + baz: bars
-        foo: bar
-      - nest: {
-            key: value
-        }
-      + nest: str
-    }
-  - group2: {
-        abc: 12345
-        deep: {
-            id: 45
-        }
-    }
-  + group3: {
-        deep: {
-            id: {
-                number: 45
-            }
-        }
-        fee: 100500
-    }
-}`;
+const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
-test('genDiff json', () => {
-  const file1 = getFixturePath('file1.json');
-  const file2 = getFixturePath('file2.json');
-  expect(genDiff(file1, file2)).toEqual(expected);
+const file1Json = getFixturePath('file1.json');
+const file1Yml = getFixturePath('file1.yml');
+const file2Json = getFixturePath('file2.json');
+const file2Yml = getFixturePath('file2.yml');
+const expectedStylish = readFile('resultStylish.txt');
+const expectedPlain = readFile('resultPlain.txt');
+
+test('nested json stylish', () => {
+  expect(genDiff(file1Json, file2Json, 'stylish')).toEqual(expectedStylish);
 });
 
-test('genDiff yaml', () => {
-  const file1 = getFixturePath('file1.yml');
-  const file2 = getFixturePath('file2.yml');
-  expect(genDiff(file1, file2)).toEqual(expected);
+test('nested yaml stylish', () => {
+  expect(genDiff(file1Yml, file2Yml, 'stylish')).toEqual(expectedStylish);
+});
+
+test('nested json plain', () => {
+  expect(genDiff(file1Json, file2Json, 'plain')).toEqual(expectedPlain);
+});
+
+test('nested yml plain', () => {
+  expect(genDiff(file1Yml, file2Yml, 'plain')).toEqual(expectedPlain);
 });
