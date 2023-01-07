@@ -26,6 +26,20 @@ make install
 npm link
 ```
 
+### Usage
+
+for help:
+
+```bash
+gendiff -h
+```
+
+examle:
+
+```bash
+gendiff [--format plain] filepath1 filepath2
+```
+
 Help:
 [![asciicast](https://asciinema.org/a/iEfG7Ej5Z7YHliM6voKg1dumG.svg)](https://asciinema.org/a/iEfG7Ej5Z7YHliM6voKg1dumG)
 
@@ -38,3 +52,5 @@ YML & JSON nested stylish format:
 YML & JSON nested plain format:
 [![asciicast](https://asciinema.org/a/1XcRRzyji24Ot05BciFk9lIEs.svg)](https://asciinema.org/a/1XcRRzyji24Ot05BciFk9lIEs)
 
+YML & JSON nested Json format:
+[![asciicast](https://asciinema.org/a/7sx7xUupi9Vt3JfKJTEXx25pN.svg)](https://asciinema.org/a/7sx7xUupi9Vt3JfKJTEXx25pN)

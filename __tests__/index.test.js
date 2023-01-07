@@ -16,6 +16,7 @@ const file2Json = getFixturePath('file2.json');
 const file2Yml = getFixturePath('file2.yml');
 const expectedStylish = readFile('resultStylish.txt');
 const expectedPlain = readFile('resultPlain.txt');
+const expectedJson = readFile('resultJson.txt');
 
 test('nested json stylish', () => {
   expect(genDiff(file1Json, file2Json, 'stylish')).toEqual(expectedStylish);
@@ -31,4 +32,12 @@ test('nested json plain', () => {
 
 test('nested yml plain', () => {
   expect(genDiff(file1Yml, file2Yml, 'plain')).toEqual(expectedPlain);
+});
+
+test('nested json json', () => {
+  expect(genDiff(file1Json, file2Json, 'json')).toEqual(expectedJson);
+});
+
+test('nested yml json', () => {
+  expect(genDiff(file1Yml, file2Yml, 'json')).toEqual(expectedJson);
 });
