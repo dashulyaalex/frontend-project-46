@@ -1,3 +1,4 @@
+/* eslint-disable jest/valid-title */
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
@@ -18,26 +19,13 @@ const expectedStylish = readFile('resultStylish.txt');
 const expectedPlain = readFile('resultPlain.txt');
 const expectedJson = readFile('resultJson.txt');
 
-test('nested json stylish', () => {
-  expect(genDiff(file1Json, file2Json, 'stylish')).toEqual(expectedStylish);
-});
-
-test('nested yaml stylish', () => {
-  expect(genDiff(file1Yml, file2Yml, 'stylish')).toEqual(expectedStylish);
-});
-
-test('nested json plain', () => {
-  expect(genDiff(file1Json, file2Json, 'plain')).toEqual(expectedPlain);
-});
-
-test('nested yml plain', () => {
-  expect(genDiff(file1Yml, file2Yml, 'plain')).toEqual(expectedPlain);
-});
-
-test('nested json json', () => {
-  expect(genDiff(file1Json, file2Json, 'json')).toEqual(expectedJson);
-});
-
-test('nested yml json', () => {
-  expect(genDiff(file1Yml, file2Yml, 'json')).toEqual(expectedJson);
+test.each([
+  [file1Json, file2Json, expectedStylish, 'stylish'],
+  [file1Yml, file2Yml, expectedStylish, 'stylish'],
+  [file1Json, file2Json, expectedPlain, 'plain'],
+  [file1Yml, file2Yml, expectedPlain, 'plain'],
+  [file1Json, file2Json, expectedJson, 'json'],
+  [file1Yml, file2Yml, expectedJson, 'json'],
+])('Test number %#', (file1, file2, expected, format) => {
+  expect(genDiff(file1, file2, format)).toEqual(expected);
 });
