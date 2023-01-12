@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const ident = (depth) => ' '.repeat(depth * 4 - 2);
+const ident = (depth, spaceCount = 4) => ' '.repeat(depth * spaceCount - 2);
 
 const stringify = (data, depth = 1) => {
   if (!_.isObject(data)) {
