@@ -40,7 +40,7 @@ examle:
 gendiff [--format plain] filepath1 filepath2
 ```
 
-#### Help:
+Help:
 [![asciicast](https://asciinema.org/a/iEfG7Ej5Z7YHliM6voKg1dumG.svg)](https://asciinema.org/a/iEfG7Ej5Z7YHliM6voKg1dumG)
 
 YML & JSON plain files:
